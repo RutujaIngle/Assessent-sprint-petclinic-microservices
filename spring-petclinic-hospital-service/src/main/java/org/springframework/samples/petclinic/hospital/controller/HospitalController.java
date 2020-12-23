@@ -18,22 +18,22 @@ public class HospitalController {
 @Autowired
 HospitalService hospitalService;	
 
-@GetMapping("/appointment")
+@GetMapping("/appointment") //get method for all appointments 
 private List<Appointment> getAppointments(){
 	return hospitalService.getAppointments();
 }
 	
-@PostMapping("/appointment")
+@PostMapping("/appointment") //post method for appointment
 private int saveAppointment(@RequestBody Appointment appointment) {
 	return hospitalService.saveOrUpdateAppointment(appointment);
 }
 
-@PutMapping("/appointment")
+@PutMapping("/appointment") //update  method for appointment
 private int updateAppointment(@RequestBody Appointment appointment) {
 	return hospitalService.saveOrUpdateAppointment(appointment);
 }
 
-@DeleteMapping("/appointment")
+@DeleteMapping("/appointment") //delete  method for appointment having appointmentId
 private void deleteAppintment(@RequestBody int appointmentId) {
 	hospitalService.deleteAppointment(appointmentId);
 	

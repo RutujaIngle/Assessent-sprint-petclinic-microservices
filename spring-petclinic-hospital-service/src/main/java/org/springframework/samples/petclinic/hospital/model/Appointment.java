@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 
 @Entity
@@ -15,8 +16,10 @@ public class Appointment {
 	@Id
 	@Column
 	int appointment_id;
+	@NotEmpty
 	@Column
 	String veterinarian_name ;
+	@NotEmpty
 	@Column
 	String pet_details;
 	@Column
